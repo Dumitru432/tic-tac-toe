@@ -1,0 +1,70 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* acum o sa costumizam id boardgame din html */
+
+#gameboard {
+  /* vreau sa fac un patrat pentru asta o sa ii dau inaltime si latime egale */
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  display: flex;
+  /* o sa folosesc wrap pentru a face ca toate pătratele pe care le-am pus în tabla de joc să se înfășoare una peste alta*/
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+
+/*o sa stilizam square clasa pe care am facut o in js  */
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 2px solid black;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 15px solid blue;
+  box-sizing: border-box;
+}
+
+.cross {
+  height: 90px;
+  width: 90px;
+  position: relative; /* folosim positie relativa pentru ca dorim sa il utilizam/folosim inainte si dupa si o sa-l transformam */
+  transform: rotate(45deg);
+}
+
+.cross:before,.cross:after {
+  content: "";
+  position: absolute;
+  background-color: red;
+}
+
+.cross:before {
+  left: 50%;
+  width: 30%;
+  margin-left: -15%;
+  height: 100%;
+}
+
+.cross:after {
+  top: 50%;
+  height: 30%;
+  margin-top: -15%;
+  width: 100%;
+}
